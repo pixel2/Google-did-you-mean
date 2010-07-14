@@ -12,7 +12,7 @@ This Google did-you-mean script uses the mobil version of google to get suggeste
 2. Activate the plugin in wordpress.
 3. Include following code anywhere you want to use google did you mean (example on the search result when no result was found).
 
-
+---
 
 	  <?php if( function_exists('google_suggestion') ) { google_suggestion(); } ?>
 	  
