@@ -12,8 +12,9 @@ This Google did-you-mean script is using the mobil version of google to get sugg
 2. Activate the plugin in wordpress
 3. Include following code anywhere you want to use google did you mean (example on the search result when no result was found)
 
-	if( function_exists('google_suggestion') ) { google_suggestion(); }
-
+	<?php
+		if( function_exists('google_suggestion') ) { google_suggestion(); }
+	?>
 ## Function interface
 
 	function doSpellingSuggestion($phrase, $lang)
