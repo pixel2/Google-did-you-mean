@@ -1,10 +1,10 @@
-# How to use native
+## How to use native
 
 1. Put the GoogleDidYouMean.php in your source folder and include the file in your project
 2. Instantiate new GoogleDidYouMean()
 3. Call doSpellingSuggestion($phrase, $lang)
 
-# How to use in wordpress
+## How to use in wordpress
 
 1. Put all files in your plugins directory
 2. Activate the plugin in wordpress
@@ -12,7 +12,7 @@
 	
 	<?php if( function_exists('google_suggestion') ) { google_suggestion(); } ?>
 	
-# Function interface
+## Function interface
 
 	function doSpellingSuggestion($phrase, $lang)
 
