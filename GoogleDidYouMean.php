@@ -48,7 +48,8 @@ class GoogleDidYouMean {
     }
     
     /* Match against the spell suggestion box and get the suggested word if exists */
-    $pattern = '/<div[^>]*spelling_onebox_result[^>]*>.*?<b><i>(.+?)<\/i><\/b>.*<\/div>/';
+    //$pattern = '/<div[^>]*spelling_onebox_result[^>]*>.*?<b><i>(.+?)<\/i><\/b>.*<\/div>/';
+    $pattern = '/<span[^>]*>[a-zA-Z\s]+:<\/span> <a[^>]+><b><i>(.+?)<\/i><\/b><\/a>/';
     preg_match($pattern, $content, $matches);
     
     return $matches[1];
