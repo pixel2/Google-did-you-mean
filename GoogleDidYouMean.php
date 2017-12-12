@@ -64,7 +64,7 @@ class GoogleDidYouMean {
         if ($pos2 === false) {
           return '';
         } else {
-          return substr($content, $pos, $pos2 - $pos);
+          return urldecode(substr($content, $pos, $pos2 - $pos));
         }
       }
     }
