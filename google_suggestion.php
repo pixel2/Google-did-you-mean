@@ -3,7 +3,7 @@
 Plugin Name: Google did-you-mean&trade;
 Plugin URI: http://blogg.pixel2.se
 Description:  Uses google did-you-mean&trade; to find misspellings and grammatical errors in searches queries, useful on search pages when no result was found. Include <code>google_suggestion();</code> in your code.
-Version: 1.0
+Version: 1.1
 Author: Emil Janitzek
 Author URI: http://pixel2.se
 */
@@ -32,5 +32,3 @@ $(".gdym").show();
 }
 }}); })(jQuery);</script>';
 }
-
-?>
