@@ -27,7 +27,7 @@ function google_suggestion($lang = null) {
 	echo '<script type="text/javascript">(function($) {
 $.ajax({ url: "/wp-content/plugins/google-did-you-mean/GoogleDidYouMean.php", data: {"q": "'. $_GET['s'] .'", "hl": "'. (($lang==null)?'en':$lang) .'", "dataType": "text"}, success: function(data){
 if (data.length > 0) {
-$(".gdym-result").attr("href","?s="+ encodeURIComponent(data)).text(data);
+$(".gdym-result").attr("href","?s="+ encodeURIComponent(data).replace(/%20/g,"+")).text(data);
 $(".gdym").show();
 }
 }}); })(jQuery);</script>';
