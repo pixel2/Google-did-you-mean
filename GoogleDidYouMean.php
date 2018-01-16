@@ -51,8 +51,23 @@ class GoogleDidYouMean {
     //$pattern = '/<div[^>]*spelling_onebox_result[^>]*>.*?<b><i>(.+?)<\/i><\/b>.*<\/div>/';
     $pattern = '/<span[^>]*>[a-zA-Z\s]+:<\/span> <a[^>]+><b><i>(.+?)<\/i><\/b><\/a>/';
     preg_match($pattern, $content, $matches);
-    
-    return $matches[1];
+    if (count($matches) > 0) {
+      return $matches[1];
+    } else {
+      $search = '<div>Showing results for <a href="/search?q=';
+      $pos = strpos($content, $search);
+      if ($pos === false) {
+        return '';
+      } else {
+        $pos += strlen($search);
+        $pos2 = strpos($content, '&', $pos);
+        if ($pos2 === false) {
+          return '';
+        } else {
+          return urldecode(substr($content, $pos, $pos2 - $pos));
+        }
+      }
+    }
     
   }
   
@@ -77,4 +92,3 @@ if (!empty($_GET["q"])) {
   }
   
 }
-?>
